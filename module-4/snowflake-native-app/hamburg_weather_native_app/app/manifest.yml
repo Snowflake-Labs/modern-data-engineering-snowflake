@@ -1,0 +1,32 @@
+# This is a manifest.yml file, a required component of creating a Snowflake Native App. 
+# This file defines properties required by the application package, including the location of the setup script and version definitions.
+# Refer to https://docs.snowflake.com/en/developer-guide/native-apps/creating-manifest for a detailed understanding of this file. 
+
+#version identifier
+manifest_version: 1
+
+version:
+  name: hamburg_app_v1
+  label: hamburg_app_v1_label
+  comment: The first version of the application
+
+#artifacts that are distributed from this version of the package
+artifacts:
+  setup_script: setup_script.sql
+  default_streamlit: app_instance_schema.streamlit
+  extension_code: true
+
+#runtime configuration for this version
+configuration:
+  log_level: debug
+  trace_level: off
+
+references:
+  - weather_hamburg_app:
+      label: "WEATHER_HAMBURG_T" 
+      description: "SELECT TABLE"
+      privileges:
+        - SELECT
+      object_type: Table 
+      multi_valued: false 
+      register_callback: app_instance_schema.update_reference 
