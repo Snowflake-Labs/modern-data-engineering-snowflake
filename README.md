@@ -40,4 +40,4 @@ The course instructor will also be sure to reference the exact folder and name o
 
 #### Reporting issues or errata
 
-If you come across any issues or errata (typos, missing code, broken links, etc.) as you complete the course, please report those issues in the course through Coursera.
+If you encounter technical issues or errata as you complete the course (i.e. typos, missing code, broken links, etc.), please report those issues in the course through Coursera, or [open a a new issue in this repository](https://github.com/Snowflake-Labs/modern-data-engineering-snowflake/issues/new). Ensure the issue contains sufficient detail so that it can be properly addressed.
