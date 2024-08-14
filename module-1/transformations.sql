@@ -73,4 +73,4 @@ GROUP BY
   month;
 
 SELECT * FROM annual_wages_cpi_usa;
-SELECT * FROM montly_cpi_usa;
+SELECT * FROM monthly_cpi_usa;
