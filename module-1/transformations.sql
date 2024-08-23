@@ -1,4 +1,6 @@
 USE ROLE accountadmin;
+
+CREATE WAREHOUSE IF NOT EXISTS compute_wh;
 USE WAREHOUSE compute_wh;
 
 -- Create a database and schema to store our data
