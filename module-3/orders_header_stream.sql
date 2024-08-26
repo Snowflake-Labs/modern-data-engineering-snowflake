@@ -2,7 +2,9 @@ USE ROLE accountadmin;
 USE WAREHOUSE compute_wh;
 USE DATABASE tasty_bytes;
 
-CREATE OR REPLACE STREAM order_header_stream ON TABLE tasty_bytes.raw_pos.order_header;
+USE SCHEMA raw_pos;
+
+CREATE OR REPLACE STREAM tasty_bytes.raw_pos.order_header_stream ON TABLE tasty_bytes.raw_pos.order_header;
 
 INSERT INTO tasty_bytes.raw_pos.order_header (
     ORDER_ID, 
@@ -40,11 +42,11 @@ INSERT INTO tasty_bytes.raw_pos.order_header (
     52.50                          -- ORDER_TOTAL
 );
 
-SELECT * FROM order_header_stream;
+SELECT * FROM tasty_bytes.raw_pos.order_header_stream;
 
 DELETE FROM tasty_bytes.raw_pos.order_header WHERE order_id=123456789;
 
 -- This won't return the deleted action in the stream because of how standard streams work
 -- See: https://docs.snowflake.com/en/user-guide/streams-intro#types-of-streams
-SELECT * FROM order_header_stream;
+SELECT * FROM tasty_bytes.raw_pos.order_header_stream;
 
