@@ -11,7 +11,7 @@ session = get_active_session()
 st.title('Weather and Sales Trends for Hamburg, Germany')
 
 # Load the view and create a pandas dataframe 
-hamburg_weather = session.table("WEATHER_HAMBURG").select(
+hamburg_weather = session.table("TASTY_BYTES.HARMONIZED.WEATHER_HAMBURG").select(
     col("DATE"),
     col("DAILY_SALES"),
     col("AVG_TEMPERATURE_FAHRENHEIT"),
