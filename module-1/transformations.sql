@@ -30,16 +30,16 @@ SELECT
     )
   ) AS cpi
 FROM
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.OECD_TIMESERIES oecd_timeseries
+  Finance__Economics.CYBERSYN.OECD_TIMESERIES oecd_timeseries
 JOIN 
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.OECD_ATTRIBUTES oecd_attributes 
+  Finance__Economics.CYBERSYN.OECD_ATTRIBUTES oecd_attributes
   ON oecd_timeseries.variable = oecd_attributes.variable
 LEFT JOIN 
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries 
+  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
   ON DATE_TRUNC('year', oecd_timeseries.date) = DATE_TRUNC('year', bureau_of_labor_statistics_price_timeseries.date)
   AND bureau_of_labor_statistics_price_timeseries.geo_id = 'country/USA'
 LEFT JOIN 
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes 
+  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes
   ON bureau_of_labor_statistics_price_timeseries.variable = bureau_of_labor_statistics_price_attributes.variable
 WHERE
   (oecd_attributes.variable_name ILIKE '%annual wages%' 
@@ -63,9 +63,9 @@ SELECT
     ), 1
   ) AS avg_cpi
 FROM
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
+  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
 JOIN 
-  FINANCIAL__ECONOMIC_ESSENTIALS.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes 
+  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes 
   ON bureau_of_labor_statistics_price_timeseries.variable = bureau_of_labor_statistics_price_attributes.variable
 WHERE
   bureau_of_labor_statistics_price_attributes.variable_name ILIKE '%CPI%'
