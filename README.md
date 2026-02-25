@@ -27,6 +27,7 @@ You can then open the folder in your preferred code editor. Throughout the cours
 All of the code that you need to successfully complete the Coursera code is within this repo. Each folder in this repo corresponds to a module in the online course.
 
 * **module-1** – Corresponds to "Module 1: Modern Data Engineering with Snowflake" in the course.
+> Note – As CYBERSYN Data Set is not available on the marketplace, you can get the Snowflake Public Data (Free) to build the pipeline. **Replace the Following:** Finance__Economics.CYBERSYN -> SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE
 
 * **module-2** – Corresponds to "Module 2: Batch Data Ingestion with Snowflake" in the course.
 
