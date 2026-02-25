@@ -30,16 +30,16 @@ SELECT
     )
   ) AS cpi
 FROM
-  Finance__Economics.CYBERSYN.OECD_TIMESERIES oecd_timeseries
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.OECD_TIMESERIES oecd_timeseries
 JOIN 
-  Finance__Economics.CYBERSYN.OECD_ATTRIBUTES oecd_attributes
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.OECD_ATTRIBUTES oecd_attributes
   ON oecd_timeseries.variable = oecd_attributes.variable
 LEFT JOIN 
-  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
   ON DATE_TRUNC('year', oecd_timeseries.date) = DATE_TRUNC('year', bureau_of_labor_statistics_price_timeseries.date)
   AND bureau_of_labor_statistics_price_timeseries.geo_id = 'country/USA'
 LEFT JOIN 
-  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes
   ON bureau_of_labor_statistics_price_timeseries.variable = bureau_of_labor_statistics_price_attributes.variable
 WHERE
   (oecd_attributes.variable_name ILIKE '%annual wages%' 
@@ -63,9 +63,9 @@ SELECT
     ), 1
   ) AS avg_cpi
 FROM
-  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES bureau_of_labor_statistics_price_timeseries
 JOIN 
-  Finance__Economics.CYBERSYN.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes 
+  SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES bureau_of_labor_statistics_price_attributes 
   ON bureau_of_labor_statistics_price_timeseries.variable = bureau_of_labor_statistics_price_attributes.variable
 WHERE
   bureau_of_labor_statistics_price_attributes.variable_name ILIKE '%CPI%'
