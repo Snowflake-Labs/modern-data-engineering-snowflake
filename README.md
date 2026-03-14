@@ -1,5 +1,22 @@
 ## Introduction to Modern Data Engineering with Snowflake
 
+> **Personal repository** — This is my personal fork of the course companion repo, where I track my progress and add my own notes as I go through the course.
+> **Student:** Alejandro Garcia | **Started:** March 2026
+
+---
+
+### My Progress
+
+| Module | Status | Notes |
+|--------|--------|-------|
+| Module 1 – Modern Data Engineering with Snowflake | 🔜 Not started | |
+| Module 2 – Batch Data Ingestion with Snowflake | 🔜 Not started | |
+| Module 3 – Data Transformations with Snowflake | 🔜 Not started | |
+| Module 4 – Delivering Data Products with Snowflake | 🔜 Not started | |
+| Module 5 – Orchestrating Continuous Data Pipelines with Snowflake | 🔜 Not started | |
+
+---
+
 Welcome! This is the companion repository that goes along with Snowflake's **[Introduction to Modern Data Engineering with Snowflake](https://www.coursera.org/learn/data-engineering-snowflake/)** course on Coursera.
 
 #### How to use this repo throughout the course:
