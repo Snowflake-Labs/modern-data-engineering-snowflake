@@ -18,7 +18,7 @@ annual_wages_cpi_data = annual_wages_cpi_table.to_pandas()
 st.title("Trends for Consumer Price Index and Annual Wages in the USA")
 
 # Monthly CPI Data chart
-st.subheader("Average monthly CPI, June 2021 through April 2024")
+st.subheader("Average monthly CPI, 2023-2026")
 line = alt.Chart(monthly_cpi_data).mark_line(color='#29B5E8').encode(
     x=alt.X('MONTH:T', title='Month'),
     y=alt.Y('AVG_CPI:Q', 
