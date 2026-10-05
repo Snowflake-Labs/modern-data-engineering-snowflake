@@ -1,4 +1,4 @@
 # Default code owners for this repository.
 # These owners will be the default reviewers for everything in the repo
 # unless a later match takes precedence.
-*       @sfc-gh-ghernandez @sfc-gh-rsafdar @sfc-gh-knguyen @sfc-gh-afilippova
+*       @sfc-gh-ghernandez @sfc-gh-rsafdar @sfc-gh-knguyen @sfc-gh-afilippova @sfc-gh-chorgan
