@@ -1,0 +1,11 @@
+[project]
+name = "wages-cpi-usa-app"
+version = "0.1.0"
+description = "Streamlit in Snowflake app charting USA wages and CPI trends."
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit",
+    "altair",
+    "snowflake-snowpark-python",
+    "pandas",
+]
